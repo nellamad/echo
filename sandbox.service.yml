@@ -1,5 +1,5 @@
 accessibility: protected
-elbAccessLogsBucket: blend-k8s-elb-accesslogs
+ELBAccessLogsBucket: blend-k8s-elb-accesslogs
 containerPort: 5000
 
 readinessProbe:
