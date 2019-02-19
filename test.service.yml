@@ -13,5 +13,3 @@ livenessProbe:
     path: /
     port: 5000
   periodSeconds: 5
-  
-  DeployNotifications: enabled
