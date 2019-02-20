@@ -1,0 +1,44 @@
+# name is the name of the check
+name: echo
+
+# environment indicates what environment the check applies to if
+# smoke signal is deployed somewhere with multiple environments visible
+# i.e. production.
+environment: sandbox
+
+# enabled lets you set if you want the check enabled or disabled.
+enabled: true
+
+# labels are used to filter checks for smokectl actions and in the dashboard
+labels:
+  kind: gutcheck
+  service: echo
+  visibility: protected
+
+# target is the service url we're checking
+target:
+  verb: GET
+  url: https://allen-echo.sandbox.k8s.centrio.com/
+  timeout: 5s
+  keepAlive: true #we should keep the connection open
+  tlsSkipVerify: false #we should verify certificate names
+
+# interval is the time between checks, must be more than the target timeout
+interval: 10s
+
+# certExpiryCheck we should validate cert expiry
+certExpiryCheck: true
+# certExpiryWarnDays we should start warning if a cert is going to expire
+# in this number of days
+certExpiryWarnDays: 30
+
+# notifications is a list of notification groups, each with
+# their own filter settings (i.e. on success, failure, fixed or broken)
+notifications:
+- email:
+    to:
+    - allend@blend.com
+  slack:
+    channel: '@allend'
+  notifyOnFixed: true
+  notifyOnBroken: true

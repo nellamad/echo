@@ -13,3 +13,4 @@ livenessProbe:
     path: /
     port: 5000
   periodSeconds: 5
+smokeSignalCheckPath: check.yml
