@@ -39,6 +39,6 @@ notifications:
     to:
     - allend@blend.com
   slack:
-    channel: '@allend'
+    channel: '#allend-smoke-signal'
   notifyOnFixed: true
   notifyOnBroken: true
