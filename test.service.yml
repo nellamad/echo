@@ -28,6 +28,7 @@ hostAliases:
 replicas: 2
 minReplicas: 1
 maxReplicas: 6
+autoscale: enabled
 autoscaleMetrics:
   - name: beehive_initialprocessingworkers.worker.active_time.avg
     selector:
