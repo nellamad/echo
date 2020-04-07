@@ -1,4 +1,4 @@
-accessibility: private
+accessibility: public
 containerPort: 5000
 
 readinessProbe:
