@@ -13,3 +13,11 @@ livenessProbe:
     path: /
     port: 5000
   periodSeconds: 5
+
+resources:
+  requests:
+    cpu: 50m
+    memory: 64Mi
+  limits: # hard limits
+    cpu: 100m
+    memory: 128Mi
