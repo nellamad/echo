@@ -24,17 +24,6 @@ hostAliases:
     - foo.remote
     - bar.remote
 
-# scaling
-replicas: 2
-minReplicas: 1
-maxReplicas: 6
-autoscale: enabled
-customMetrics:
-- pods:
-    metricName: http_requests_total
-    targetAverageValue: 500m
-  type: Pods
-
 resources:
   limits:
     cpu: 50m
