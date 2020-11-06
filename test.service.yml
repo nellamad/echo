@@ -35,6 +35,14 @@ customMetrics:
     targetAverageValue: 500m
   type: Pods
 
+resources:
+  limits:
+    cpu: 50m
+    memory: 64Mi
+  requests:
+    cpu: 50m
+    memory: 64Mi
+
 istio:
   enabled: true
   tlsMode: STRICT
@@ -43,16 +51,8 @@ istio:
     maxReplicas: 10
     resources:
       requests:
-        cpu: 250m
-        memory: 256Mi
+        cpu: 50m
+        memory: 64Mi
       limits:
-        cpu: 1000m
-        memory: 1024Mi
-  sidecar:
-    resources:
-      requests:
-        cpu: 100m
-        memory: 128Mi
-      limits:
-        cpu: 2000m
-        memory: 1024Mi
+        cpu: 50m
+        memory: 64Mi
