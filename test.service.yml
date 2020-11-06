@@ -1,4 +1,4 @@
-accessibility: public
+accessibility: private
 containerPort: 5000
 
 readinessProbe:
@@ -34,3 +34,25 @@ customMetrics:
     metricName: http_requests_total
     targetAverageValue: 500m
   type: Pods
+
+istio:
+  enabled: true
+  tlsMode: STRICT
+  gateway:
+    minReplicas: 2
+    maxReplicas: 10
+    resources:
+      requests:
+        cpu: 250m
+        memory: 256Mi
+      limits:
+        cpu: 1000m
+        memory: 1024Mi
+  sidecar:
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128Mi
+      limits:
+        cpu: 2000m
+        memory: 1024Mi
