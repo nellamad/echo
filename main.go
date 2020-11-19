@@ -41,7 +41,7 @@ func main() {
 		if time.Since(appStart) > 12*time.Second {
 			return r.Text().Result("OK!")
 		}
-		return r.Text().InternalError(fmt.Errorf("not ready"))
+		return r.Text().InternalError(fmt.Errorf("Not ready"))
 	})
 
 	app.GET("/long/:seconds", func(r *web.Ctx) web.Result {
